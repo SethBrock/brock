@@ -1,0 +1,7 @@
+E:\Game Programming\Hangman\Hangman\bin\Debug\Hangman.exe.config
+E:\Game Programming\Hangman\Hangman\bin\Debug\Hangman.exe
+E:\Game Programming\Hangman\Hangman\bin\Debug\Hangman.pdb
+E:\Game Programming\Hangman\Hangman\obj\Debug\Hangman.csproj.AssemblyReference.cache
+E:\Game Programming\Hangman\Hangman\obj\Debug\Hangman.csproj.CoreCompileInputs.cache
+E:\Game Programming\Hangman\Hangman\obj\Debug\Hangman.exe
+E:\Game Programming\Hangman\Hangman\obj\Debug\Hangman.pdb
