@@ -11,21 +11,18 @@ namespace Hangman
         static void Main(string[] args)
         {
 
-            string guess = "";
             string word = "";
 
             string[] wordBank = new string[5]
             {
 
-                "help",
-                "me",
-                "please",
-                "now",
-                "alligator"
+                "method",
+                "goat",
+                "zebra",
+                "pig",
+                "cow"
                 //avoid words that repeat a letter
             };
-            
-            //PlayGame(guess, word, wordBank);
             
             Console.WriteLine("Welcome to Hang The Man!");
             Console.WriteLine("Press 'Enter' to begin!");
@@ -42,7 +39,7 @@ namespace Hangman
                 while (true)
                 {
 
-                    PlayGame(guess, word, wordBank);
+                    PlayGame(word, wordBank);
 
                 }
 
@@ -52,71 +49,164 @@ namespace Hangman
 
         }
 
-        static void PlayGame(string guess, string word, string[] words)
+        static bool PlayGame(string word, string[] words)
         {
             int wordIndex = PickWord();
-            Console.WriteLine(wordIndex);
+            //Console.WriteLine(wordIndex);
+
+            int tries = 5;
+            int lettersLeft = 0;
+            bool isPlaying = true;
 
             string chosenWord = words[wordIndex];
-            Console.WriteLine(chosenWord);
+            //Console.WriteLine(chosenWord);
 
-            PrintLines(word);
+            GetNumberOfLetters(lettersLeft);
+
+            /*PrintLines(word);*/
 
             Console.WriteLine("Press any letter to guess!");
-            guess = Console.ReadLine();
+            char guess = char.Parse(Console.ReadLine());
             //console closes after this, idk why
 
-
-        }
-
-        private static int PrintLetters(List<char> guessedLetters, string randomWord)
-        {
-
-            int counter = 0;
-            int rightLetters = 0;
-
-            Console.WriteLine("\r\n");
-            //this is gonna do something I think
-            foreach (char c in randomWord)
+            for(int i = 0; i < chosenWord.Length; i--)
             {
 
-                if (guessedLetters.Contains(c))
-                {
 
-                    Console.Write(c + " ");
-
-                }
-                else
-                {
-
-                    Console.Write(" ");
-
-                }
-
-                counter++;
 
             }
 
-            return rightLetters;
+            if(true)
+            {
+                
+                lettersLeft--;
+                
+                Console.WriteLine("That letter is in this word!");
+                Console.WriteLine("There are " + lettersLeft + " letters left in this word!");
+
+            }
+            else
+            {
+
+                tries--;
+                
+                Console.WriteLine("Oops! That letter is not in this word!");
+                Console.WriteLine("You have " + tries + " failed attempts left until you lose!");
+
+                if(tries <= 0)
+                {
+
+                    isPlaying = false;
+
+                }
+
+            }
+
+            return isPlaying;
 
         }
 
-        private static void PrintLines(string randomWord)
+        private static int GetNumberOfLetters(int index)
         {
 
-            Console.Write("");
+            int number = 0;
 
-
-
-            foreach (char c in randomWord)
+            if(index == 0)
             {
 
-                Console.OutputEncoding = System.Text.Encoding.Unicode;
-
-                Console.Write("\u0305");
-                //idk what this means
+                number = 6;
 
             }
+            else if (index == 1)
+            {
+
+                number = 4;
+
+            }
+            else if (index == 2 || index == 3)
+            {
+
+                number = 3;
+
+            }
+            else if (index == 4)
+            {
+
+                number = 5;
+
+            }
+
+            return number;
+
+        }
+
+        private static void GetCorrectLetters(int index, char guess)
+        {
+            //this is to get correct guesses I think??
+            //idk I kinda lost the plot and am making a lot of methods
+            if(index == 0)
+            {
+
+                string[] wordMethod = new string[6]
+                {
+                    "m",
+                    "e",
+                    "t",
+                    "h",
+                    "o",
+                    "d"
+                };
+
+            }
+            else if(index == 1)
+            {
+
+                string[] wordGoat = new string[4]
+                {
+                    "g",
+                    "o",
+                    "a",
+                    "t"
+                };
+
+            }
+            else if(index == 2)
+            {
+
+                string[] wordPig = new string[3]
+                {
+                    "p",
+                    "i",
+                    "g"
+                };
+
+            }
+            else if(index == 3)
+            {
+
+                string[] wordCow = new string[3]
+                {
+                    "c",
+                    "o",
+                    "w"
+                };
+
+            }
+            else if(index == 4)
+            {
+
+                string[] wordZebra = new string[5]
+                {
+                    "z",
+                    "e",
+                    "b",
+                    "r",
+                    "a"
+                };
+
+            }
+
+
 
         }
         private static int PickWord()
@@ -125,7 +215,6 @@ namespace Hangman
             Random index = new Random();
 
             int num = index.Next(6);
-            
 
             return num;
 

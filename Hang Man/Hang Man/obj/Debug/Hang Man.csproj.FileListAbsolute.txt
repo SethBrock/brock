@@ -1,0 +1,7 @@
+E:\Game Programming\brock-programming\Hang Man\Hang Man\bin\Debug\Hang Man.exe.config
+E:\Game Programming\brock-programming\Hang Man\Hang Man\bin\Debug\Hang Man.exe
+E:\Game Programming\brock-programming\Hang Man\Hang Man\bin\Debug\Hang Man.pdb
+E:\Game Programming\brock-programming\Hang Man\Hang Man\obj\Debug\Hang Man.csproj.AssemblyReference.cache
+E:\Game Programming\brock-programming\Hang Man\Hang Man\obj\Debug\Hang Man.csproj.CoreCompileInputs.cache
+E:\Game Programming\brock-programming\Hang Man\Hang Man\obj\Debug\Hang Man.exe
+E:\Game Programming\brock-programming\Hang Man\Hang Man\obj\Debug\Hang Man.pdb
